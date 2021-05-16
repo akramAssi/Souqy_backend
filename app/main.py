@@ -1,7 +1,10 @@
-from flask import Flask
+from flask import Flask,request,jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/api',methods=['GET'])
 def hello():
-    return "Hello dsd!"
+    d={}
+    d["Query"]=str(request.args["Query"])
+    return d["Query"]
+    
