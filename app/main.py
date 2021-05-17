@@ -6,5 +6,5 @@ app = Flask(__name__)
 def hello():
     d={}
     d["Query"]=str(request.args["Query"])
-    return d["Query"]
+    return jsonify(d)
     
